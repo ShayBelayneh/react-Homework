@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+</head>
+
+<body>
+    <!-- תרגיל 1 -->
+    <main id="app"> </main>
+    <script type="text/babel">
+
+        const app = document.getElementById("app");
+
+        function ReturnHello() {
+
+            return <div> hello </div>
+
+        }
+
+        ReactDOM.render(
+
+            ReturnHello()
+
+            , app);
+
+        // תרגיל 2
+
+
+        function ReturnCar() {
+
+            return <div> mitsubishi </div>
+
+        }
+
+        ReactDOM.render(
+            ReturnCar()
+            , app);
+
+
+
+        //תרגיל 3
+
+        function ReturnName() {
+
+            return <div> shay </div>
+
+        }
+
+        ReactDOM.render(
+            ReturnName()
+            , app);
+
+
+        function Return3To1() {
+
+
+        }
+        function GetNameReturnHello(props) {
+            return <div>hello {props.name}</div>
+        }
+        // צור קומפוננטה שמקבלת שם וגיל ומציגה על המסך את השם והגיל
+        // חזור על זה 10 פעמים
+
+        function GetNameAndAge(props) {
+            return <div>{props.name} {props.age}</div>
+        }
+
+        // צור קומפוננטה שמקבלת לינק ומחזירה תמונה
+        // חזור על זה עם 3 תמונות
+        function GetLink(props) {
+            return <img src={props.link}></img>
+        }
+
+        // <ReturnTags/>
+
+        ReactDOM.render(<div>
+            <Hello />
+            <ReturnText />
+            <Car />
+            <Car />
+            <Car />
+            <Car />
+            <Car />
+            <Car />
+            <Car />
+            <Car />
+            <Car />
+            <Car />
+            <ReturnTagHeader />
+            <ReturnTagMain />
+            <ReturnTagFooter />
+            <GetNameReturnHello name="shay" />
+            <GetNameAndAge name="shay" age={22} />
+            <GetLink link="https://cdn.pixabay.com/photo/2021/09/17/12/07/bird-of-paradise-flower-6632515_960_720.jpg" />
+        </div>, domElement
+        );
+
+
+    </script>
+
+</body>
+
+</html>
